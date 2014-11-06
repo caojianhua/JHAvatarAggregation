@@ -7,23 +7,37 @@
 //
 
 #import "JHViewController.h"
+#import "JHAvatarAggregation.h"
 
 @interface JHViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *testImageView;
 
 @end
 
 @implementation JHViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+
+  __weak JHViewController *weakSelf = self;
+  [[JHAvatarAggregation shareInstance] aggreationAvatarWithUrls:@[@"http://www.gravatar.com/avatar?d=identicon",
+                                                                  @"http://www.gravatar.com/avatar?d=identicon",
+                                                                  @"http://www.gravatar.com/avatar?d=identicon",
+                                                                  @"http://www.gravatar.com/avatar?d=identicon",
+                                                                  @"http://www.gravatar.com/avatar?d=identicon",
+                                                                  @"http://www.gravatar.com/avatar?d=identicon",
+                                                                  @"http://www.gravatar.com/avatar?d=identicon",
+                                                                  @"http://www.gravatar.com/avatar?d=identicon"]
+                                                 withCompletion:^(UIImage *image) {
+                                                   weakSelf.testImageView.image = image;
+                                                 }];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning];
+  // Dispose of any resources that can be recreated.
 }
 
 @end
