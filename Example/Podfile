@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'JHAvatarAggregation', :exclusive => true do
+  pod "JHAvatarAggregation", :path => "../"
+end
+
+target 'Tests', :exclusive => true do
+  pod "JHAvatarAggregation", :path => "../"
+
+  
+end
