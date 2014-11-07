@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "JHAvatarAggregation"
-  s.version          = "0.1.0"
+  s.version          = "0.1.1"
   s.summary          = "Avatar polymerization showed in a UIImageView"
   s.homepage         = "https://github.com/caojianhua1741/JHAvatarAggregation"
   s.license          = 'MIT'
